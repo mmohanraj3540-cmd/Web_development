@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Mohanraj M about web development, AI, and software projects.">
+  <meta name="author" content="Mohanraj M">
+  <meta name="robots" content="index, follow">
+  <title>Contact | Mohanraj M</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html">Mohanraj M</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container section">
+    <header>
+      <p class="eyebrow">Get in touch</p>
+      <h1>Contact me</h1>
+      <p>Use the form below to send a message. All fields required are clearly identified.</p>
+    </header>
+
+    <form class="contact-form" action="#" method="post" aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Message form</h2>
+
+      <div class="form-field">
+        <label for="name">Full name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-required="true">
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email address <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
+               aria-describedby="email-help">
+        <p id="email-help" class="help-text">Use a valid email address so I can reply.</p>
+      </div>
+
+      <div class="form-field">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" autocomplete="off">
+      </div>
+
+      <div class="form-field">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="message" name="message" rows="7" required aria-required="true"></textarea>
+      </div>
+
+      <button class="button" type="submit">Send message</button>
+      <p id="form-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; <span id="year">2026</span> Mohanraj M.</p></div></footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
