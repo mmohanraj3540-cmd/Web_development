@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mohanraj to discuss AI, development opportunities, or collaborations using the accessible contact form.">
+    <meta name="robots" content="index, follow">
+    <title>Contact | Mohanraj</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="Mohanraj Portfolio Home">Mohanraj</a>
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+            <nav id="primary-navigation" aria-label="Primary navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            
+            <!-- Accessible status region -->
+            <div id="formStatus" class="sr-only" tabindex="-1" role="alert" aria-live="polite"></div>
+
+            <form id="contactForm" action="#" method="POST" novalidate>
+                <fieldset>
+                    <legend>Send a Message</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input id="subject" name="subject" type="text" required aria-required="true" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true" autocomplete="off"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Submit Message</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <ul class="social-links" aria-label="Social media profiles">
+                <li><a href="#github-placeholder" title="Placeholder Link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="#linkedin-placeholder" title="Placeholder Link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+            <p>&copy; 2026 Mohanraj. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
