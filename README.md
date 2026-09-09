@@ -18,6 +18,19 @@ This project is a multi-page personal portfolio website built with native web te
 - **Accessibility:** Preserves semantic HTML5 tags, ARIA attributes, keyboard navigation, and high contrast focus states.
 - **Semantic HTML5:** Strict adherence to structural tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
 
+## Task 3 – JavaScript To-Do Application
+This project includes a fully functional client-side To-Do List application built to demonstrate advanced JavaScript concepts. The application (`todo.html`) showcases:
+- **CRUD operations**: Create, read, update, and delete tasks.
+- **DOM manipulation**: Dynamic element generation and safe content injection.
+- **Event handling**: Interactive UI elements including keyboard support.
+- **Event delegation**: Efficient action handling using a single event listener on the parent list.
+- **State management**: Utilizing a central JavaScript array (`tasks`) as the single source of truth.
+- **localStorage persistence**: Seamless data saving and loading across sessions and page reloads.
+- **Filtering**: Dynamic UI states (All, Active, Completed).
+- **Responsive design**: Mobile-first architecture integrated with the main portfolio layout.
+- **Accessibility**: Semantic elements, screen-reader friendly live regions, and aria-labels.
+The To-Do application logic is encapsulated in `todo.js`, with the UI styled seamlessly via custom properties in `styles.css`.
+
 ## Responsive Design
 The website uses a mobile-first approach and progressively enhances the layout across multiple breakpoints to ensure optimal viewing experiences across all devices. It fully supports:
 - Mobile (320px and up)
@@ -39,8 +52,10 @@ portfolio
 ├── projects.html
 ├── skills.html
 ├── contact.html
+├── todo.html
 ├── styles.css
 ├── main.js
+├── todo.js
 ├── assets/
 │   └── images/
 │       ├── workspace.jpg

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about Mohanraj, a software developer and AI enthusiast, including education and career interests.">
+    <meta name="description" content="JavaScript To-Do Application demonstrating DOM manipulation and State Management.">
     <meta name="robots" content="index, follow">
-    <title>About Me | Mohanraj</title>
+    <title>To-Do List | Mohanraj - AI & Software Developer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
+    <script src="todo.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -29,10 +30,10 @@
             <nav id="primary-navigation" aria-label="Primary navigation">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="skills.html">Skills</a></li>
-                    <li><a href="todo.html">To-Do</a></li>
+                    <li><a href="todo.html" aria-current="page">To-Do</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -41,30 +42,38 @@
 
     <main id="main-content">
         <div class="container">
-            <h1>About Me</h1>
+            <h1>To-Do List</h1>
+            <p>A client-side task management application demonstrating JavaScript DOM manipulation and localStorage.</p>
             
-            <section aria-labelledby="intro-heading">
-                <h2 id="intro-heading">Personal Introduction</h2>
-                <p>Hello! I am a passionate Software Developer and AI student dedicated to building robust, accessible, and intelligent applications. My journey in tech started out of a profound curiosity for how data and algorithms can solve real-world problems.</p>
-                <p>I focus on creating semantic, user-friendly web experiences while bridging the gap between cutting-edge AI research and practical software implementations.</p>
-            </section>
+            <section class="todo-app card" aria-label="Task Management">
+                <form id="todo-form" class="todo-form">
+                    <div class="todo-input-group">
+                        <label for="new-task" class="sr-only">What needs to be done?</label>
+                        <input type="text" id="new-task" placeholder="What needs to be done?" autocomplete="off">
+                        <button type="submit" class="btn">Add Task</button>
+                    </div>
+                </form>
 
-            <section aria-labelledby="education-heading">
-                <h2 id="education-heading">Education</h2>
-                <h3>B.Tech in Artificial Intelligence and Data Science</h3>
-                <p><strong>Tech University</strong> — Expected Graduation: 2027</p>
-                <p>Specialization in Artificial Intelligence and Data Science. Relevant coursework includes Machine Learning, Web Technologies, Data Structures, and Human-Computer Interaction.</p>
-            </section>
+                <div class="todo-controls">
+                    <div class="todo-filters" role="group" aria-label="Filter tasks">
+                        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+                        <button class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+                    </div>
+                    <div class="todo-status">
+                        <span id="task-count" aria-live="polite">0 tasks remaining</span>
+                        <button id="clear-completed" class="btn-secondary clear-btn" disabled>Clear Completed</button>
+                    </div>
+                </div>
 
-            <section aria-labelledby="career-heading">
-                <h2 id="career-heading">Career & Technical Interests</h2>
-                <p>I am actively exploring opportunities in Frontend Development, AI Engineering, and full-stack architecture. My technical interests involve:</p>
-                <ul>
-                    <li>Web Accessibility (WCAG standards)</li>
-                    <li>Large Language Models and Generative AI</li>
-                    <li>Data Analytics and Visualization</li>
-                    <li>Performance Optimization in web applications</li>
-                </ul>
+                <div class="todo-list-container">
+                    <ul id="todo-list" class="todo-list" aria-label="List of tasks">
+                        <!-- Tasks dynamically injected here -->
+                    </ul>
+                    <div id="empty-state" class="empty-state alert success">
+                        <p>No tasks found. Add a task to get started!</p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
