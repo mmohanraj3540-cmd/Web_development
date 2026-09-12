@@ -813,3 +813,104 @@ input:focus, textarea:focus {
 .empty-state.visible {
   display: block;
 }
+
+/* 17. Weather Dashboard Styles */
+.weather-app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.weather-input-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .weather-input-group {
+    flex-direction: row;
+  }
+}
+
+.weather-input-group input {
+  flex: 1;
+}
+
+.weather-status {
+  margin: var(--space-md) 0;
+}
+
+.loading-state {
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.weather-result {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.weather-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.weather-city {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.weather-desc {
+  font-size: var(--text-lg);
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: var(--surface-hover);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}

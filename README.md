@@ -31,6 +31,16 @@ This project includes a fully functional client-side To-Do List application buil
 - **Accessibility**: Semantic elements, screen-reader friendly live regions, and aria-labels.
 The To-Do application logic is encapsulated in `todo.js`, with the UI styled seamlessly via custom properties in `styles.css`.
 
+## Task 4 – Asynchronous JavaScript & RESTful APIs (Weather Dashboard)
+This project includes a real-time Weather Dashboard (`weather.html`) that fetches and processes JSON data from public REST APIs using modern asynchronous JavaScript.
+- **Asynchronous JavaScript**: Utilizes `async/await`, `fetch()`, and robust `try/catch/finally` blocks for non-blocking operations.
+- **RESTful APIs**: Integrates with Open-Meteo's Geocoding API to resolve city coordinates, and the Forecast API to retrieve current weather metrics.
+- **JSON Processing**: Safely extracts and processes nested JSON properties and maps WMO codes to human-readable weather conditions.
+- **Dynamic DOM Rendering**: Securely updates the UI with retrieved data (Temperature, Humidity, Wind Speed) without using unsafe `innerHTML`.
+- **Error Handling**: Comprehensive handling of network failures, invalid HTTP responses, empty inputs, and unfound cities.
+- **Loading & Status States**: Accessible loading indicators and friendly error messages utilizing `aria-live`.
+- **Responsive Design & Accessibility**: Fully responsive across devices and integrated with the existing Light/Dark theme system while maintaining strict keyboard navigation and accessibility standards.
+
 ## Responsive Design
 The website uses a mobile-first approach and progressively enhances the layout across multiple breakpoints to ensure optimal viewing experiences across all devices. It fully supports:
 - Mobile (320px and up)
@@ -53,9 +63,11 @@ portfolio
 ├── skills.html
 ├── contact.html
 ├── todo.html
+├── weather.html
 ├── styles.css
 ├── main.js
 ├── todo.js
+├── weather.js
 ├── assets/
 │   └── images/
 │       ├── workspace.jpg
