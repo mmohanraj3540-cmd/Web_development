@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export const initTodo = () => {
     // State Management
     let tasks = [];
     let currentFilter = 'all';
@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearCompletedBtn = document.getElementById('clear-completed');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const emptyState = document.getElementById('empty-state');
+
+    // If elements don't exist, exit early (not on todo page)
+    if (!todoForm || !todoList) return;
 
     // 1. Initialize Application
     const initApp = () => {
@@ -292,4 +295,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Boot up
     initApp();
-});
+};

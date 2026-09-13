@@ -5,20 +5,20 @@
 
 /* 1. CSS Variables / Theme */
 :root {
-  /* Light Theme Colors (Default) */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --surface: #ffffff;
-  --surface-hover: #f1f5f9;
+  /* Marvel Cinematic Theme Colors (Light Mode) */
+  --bg-primary: #f8f8f8;
+  --bg-secondary: #e6e6e6;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-hover: #ffffff;
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-primary: #000000;
+  --text-secondary: #333333;
 
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-light: rgba(37, 99, 235, 0.1);
+  --accent: #E62429; /* Marvel Red */
+  --accent-hover: #8B0000; /* Dark Red */
+  --accent-light: rgba(230, 36, 41, 0.15);
 
-  --border-color: #e2e8f0;
+  --border-color: rgba(230, 36, 41, 0.3);
 
   --error: #ef4444;
   --success: #10b981;
@@ -65,20 +65,20 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Theme Colors */
-  --bg-primary: #0a0f18;
-  --bg-secondary: #141b26;
-  --surface: #1e293b;
-  --surface-hover: #2dd4bf10;
+  /* Marvel Cinematic Theme Colors (Dark Mode) */
+  --bg-primary: #050505; /* Deep Black */
+  --bg-secondary: #111111; /* Dark Gray */
+  --surface: rgba(20, 20, 20, 0.85); /* Heavy dark glass */
+  --surface-hover: rgba(30, 30, 30, 0.95);
 
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
 
-  --accent: #38bdf8;
-  --accent-hover: #7dd3fc;
-  --accent-light: rgba(56, 189, 248, 0.1);
+  --accent: #E62429; /* Marvel Red */
+  --accent-hover: #ff3b3f; /* Bright Red */
+  --accent-light: rgba(139, 0, 0, 0.4); /* Dark Red Glow */
 
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(230, 36, 41, 0.4);
 
   --error: #f87171;
   --success: #4ade80;
@@ -153,9 +153,18 @@ body {
 h1, h2, h3, h4 {
   line-height: 1.2;
   margin-bottom: var(--space-md);
-  font-weight: 800;
-  color: var(--text-primary);
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+h1 {
+  text-shadow: 0 0 10px rgba(230,36,41,0.8), 0 0 20px rgba(230,36,41,0.8), 0 0 40px rgba(230,36,41,1);
+}
+h2 {
+  text-shadow: 0 0 10px rgba(230,36,41,0.5), 0 0 20px rgba(230,36,41,0.8);
+}
+
 
 h1 { font-size: var(--text-4xl); }
 h2 { font-size: var(--text-3xl); color: var(--accent); }
@@ -198,6 +207,8 @@ section { margin-bottom: var(--space-2xl); }
 /* 6. Header & Navigation */
 .site-header {
   background-color: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   padding: var(--space-sm) 0;
   position: sticky;
@@ -358,6 +369,8 @@ section { margin-bottom: var(--space-2xl); }
 /* 13. Components */
 .card {
   background-color: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   border: 1px solid var(--border-color);
@@ -913,4 +926,159 @@ input:focus, textarea:focus {
   font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--text-primary);
+}
+
+
+/* 17. Cursor Flow Effect */
+@media (pointer: fine) {
+  body, a, button, input, textarea, .theme-toggle-btn {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot, .cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-light);
+  background-color: rgba(34, 84, 61, 0.05); /* very subtle tint */
+}
+[data-theme="dark"] .cursor-outline {
+  background-color: rgba(74, 222, 128, 0.05);
+}
+
+/* Hovering effect */
+.cursor-dot.hovering {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: transparent;
+  border: 2px solid var(--accent);
+}
+
+.cursor-outline.hovering {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+/* Cinematic Spiderman Sparks Background */
+body {
+  background-color: #050505;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(230, 36, 41, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(139, 0, 0, 0.2), transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(230, 36, 41, 0.1), transparent 50%);
+  background-attachment: fixed;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Sparks Effect */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background-image: 
+    radial-gradient(2px 2px at 40px 60px, #ffaa00, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 20px 50px, #ff3300, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 30px 100px, #ffaa00, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 60px, #ff3300, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 110px 90px, #ffaa00, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 190px 150px, #ff3300, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: sparksAnim 4s linear infinite;
+  opacity: 0.6;
+}
+body::after {
+  background-size: 300px 300px;
+  animation: sparksAnim 6s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes sparksAnim {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-300px) rotate(10deg); opacity: 0; }
+}
+
+[data-theme="light"] body {
+  /* Enforce dark mode for this specific UI */
+  background-color: #050505;
+}
+
+/* Ensure cards are dark and cinematic */
+.card {
+  background-color: rgba(15, 15, 15, 0.85) !important;
+  border: 1px solid rgba(230, 36, 41, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 15px rgba(230, 36, 41, 0.1) !important;
+}
+.card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(230, 36, 41, 0.3) !important;
+  border-color: rgba(230, 36, 41, 0.8) !important;
+}
+
+/* Update text colors to match the dark vibe */
+p, li {
+  color: #dddddd !important;
+}
+a {
+  color: #ff3b3f !important;
+}
+a:hover {
+  color: #ff8888 !important;
+  text-shadow: 0 0 8px rgba(255, 59, 63, 0.8);
+}
+.btn {
+  background-color: rgba(230, 36, 41, 0.1) !important;
+  border: 1px solid #E62429 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background-color: #E62429 !important;
+  box-shadow: 0 0 15px #E62429, 0 0 30px #E62429 !important;
+}
+
+/* Micro-animations */
+.btn {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px var(--accent-light);
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 15px -3px var(--accent-light);
+}
+.card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, background-color 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px var(--accent-light);
+}
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px var(--accent-light);
 }

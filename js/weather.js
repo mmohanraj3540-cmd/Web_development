@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export const initWeather = () => {
     const weatherForm = document.getElementById('weather-form');
     const cityInput = document.getElementById('city-input');
     const searchBtn = document.getElementById('search-btn');
@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tempEl = document.getElementById('weather-temp');
     const humidityEl = document.getElementById('weather-humidity');
     const windEl = document.getElementById('weather-wind');
+
+    if (!weatherForm || !cityInput) return;
 
     // WMO Weather interpretation codes
     const getWeatherDescription = (code) => {
@@ -165,4 +167,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         searchWeather(city);
     });
-});
+};
